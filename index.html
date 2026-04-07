@@ -201,7 +201,7 @@
                 </table>
             </div>
             <div class="text-center" style="margin-top: 40px;">
-                <button class="btn btn-secondary outline-light"><img src="assests/image4.png" width="16px" height="16px"
+                <button class="btn btn-secondary outline-light" id="btnDownloadDatasheet"><img src="assests/image4.png" width="16px" height="16px"
                         alt="Download" /> Download Full Technical Datasheet</button>
             </div>
         </div>
@@ -276,7 +276,7 @@
             </div>
 
             <div class="text-center" style="margin-top: 40px;">
-                <button class="btn btn-primary" style="background-color: var(--primary);">Request a Quote</button>
+                <button class="btn btn-primary" id="btnRequestQuote" style="background-color: var(--primary);">Request a Quote</button>
             </div>
         </div>
     </section>
@@ -779,6 +779,56 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modals -->
+    <!-- Modal 1: Download Catalogue -->
+    <div class="modal-overlay" id="catalogueModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeCatalogueModal">&times;</button>
+            <div class="modal-header">
+                <h3>Let us email the entire catalogue to you</h3>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <label>Your Email *</label>
+                    <input type="email" placeholder="example@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Contact (Optional)</label>
+                    <input type="tel" placeholder="+91-0000000000">
+                </div>
+                <button type="submit" class="btn btn-modal" style="background-color: #E8EAF6; color: #3949AB; width: auto; float: right;">Download Brochure</button>
+                <div style="clear: both;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 2: Request a callback -->
+    <div class="modal-overlay" id="quoteModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeQuoteModal">&times;</button>
+            <div class="modal-header">
+                <h3>Request a call back</h3>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Company Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group phone-group-modal">
+                    <div class="phone-prefix">+91 &or;</div>
+                    <input type="tel" placeholder="7003026616" required>
+                </div>
+                <button type="submit" class="btn btn-modal" style="background-color: #283593; color: white; width: auto; float: right;">Submit Form</button>
+                <div style="clear: both;"></div>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

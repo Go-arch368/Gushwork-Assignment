@@ -89,6 +89,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* --- Modal Logic --- */
+    const catalogueModal = document.getElementById('catalogueModal');
+    const quoteModal = document.getElementById('quoteModal');
+    const btnDownloadDatasheet = document.getElementById('btnDownloadDatasheet');
+    const btnRequestQuote = document.getElementById('btnRequestQuote');
+    const closeCatalogueModal = document.getElementById('closeCatalogueModal');
+    const closeQuoteModal = document.getElementById('closeQuoteModal');
+
+    if (btnDownloadDatasheet && catalogueModal) {
+        btnDownloadDatasheet.addEventListener('click', (e) => {
+            e.preventDefault();
+            catalogueModal.classList.add('active');
+        });
+    }
+
+    if (btnRequestQuote && quoteModal) {
+        btnRequestQuote.addEventListener('click', (e) => {
+            e.preventDefault();
+            quoteModal.classList.add('active');
+        });
+    }
+
+    if (closeCatalogueModal) {
+        closeCatalogueModal.addEventListener('click', (e) => {
+            e.preventDefault();
+            catalogueModal.classList.remove('active');
+        });
+    }
+
+    if (closeQuoteModal) {
+        closeQuoteModal.addEventListener('click', (e) => {
+            e.preventDefault();
+            quoteModal.classList.remove('active');
+        });
+    }
+
+    // Close on clicking outside the modal content
+    if (catalogueModal) {
+        catalogueModal.addEventListener('click', (e) => {
+            if (e.target === catalogueModal) catalogueModal.classList.remove('active');
+        });
+    }
+
+    if (quoteModal) {
+        quoteModal.addEventListener('click', (e) => {
+            if (e.target === quoteModal) quoteModal.classList.remove('active');
+        });
+    }
+
 });
 
 /* --- Global Thumbnail Switcher --- */
