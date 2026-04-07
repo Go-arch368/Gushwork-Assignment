@@ -1955,4 +1955,49 @@ h4 {
         padding-top: 48px !important;
         padding-bottom: 48px !important;
     }
+
+    .section-title {
+        font-size: 1.75rem !important;
+    }
+
+    .catalogue-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .catalogue-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .catalogue-form input, .catalogue-form button {
+        width: 100%;
+    }
+
+    .logos-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .partner-logo {
+        max-width: calc(33% - 15px);
+    }
+
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
 }
