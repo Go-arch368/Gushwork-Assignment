@@ -160,14 +160,29 @@ h4 {
     gap: 32px;
 }
 
-.nav-links a {
+.nav-links a, .dropbtn {
     font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-main);
+    text-decoration: none;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .dropbtn:hover {
     color: var(--primary);
+}
+
+.dropbtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.dropbtn img {
+    height: 8px;
+    width: auto;
+    display: block;
+    margin-top: 2px;
 }
 
 /* Hero Section */
@@ -1711,7 +1726,7 @@ h4 {
     gap: 8px;
 }
 
-.phone-group-modal .phone-prefix {
+.phone-group-modal .phone-prefix, .phone-input-wrap .phone-prefix {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1721,6 +1736,18 @@ h4 {
     background: #F9FAFB;
     font-size: 0.95rem;
     font-weight: 500;
+    gap: 8px;  
+}
+
+.phone-prefix span {
+    display: block;
+}
+
+.phone-prefix img {
+    height: 8px;
+    width: auto;
+    display: block;
+    margin-top: 1px;
 }
 
 .btn-modal {
