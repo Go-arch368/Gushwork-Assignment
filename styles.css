@@ -1,7 +1,3 @@
-/* 
-   Mangalam HDPE - Premium Design System
-   Matches Figma Design image provided by user
-*/
 
 :root {
     --primary: #312E81;
@@ -49,7 +45,7 @@ a {
     transition: all 0.2s ease;
 }
 
-/* Typography Extensions */
+
 h1,
 h2,
 h3,
@@ -68,7 +64,7 @@ h4 {
     margin-right: auto;
 }
 
-/* Layout Components */
+
 .container {
     max-width: calc(var(--container-width) + 200px);
     /* 1240 + 100 + 100 */
@@ -85,7 +81,7 @@ h4 {
     background-color: var(--bg-light);
 }
 
-/* Buttons */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -200,10 +196,10 @@ h4 {
 
 @media (max-width: 800px) {
     .sticky-nav-row {
-        display: none; /* Hide top row on small screens to save space */
+        display: none; 
     }
     .sticky-product-text .sticky-title {
-        display: none; /* Only show price on tiny screens or hide entirely */
+        display: none; 
     }
 }
 
@@ -594,7 +590,7 @@ h4 {
 }
 
 .partner-logo {
-    width: 140px; /* Reduced width for better sliding action */
+    width: 140px; 
     height: 50px;
     max-width: 100%;
     object-fit: contain;
@@ -605,7 +601,7 @@ h4 {
     scroll-snap-align: start;
 }
 
-/* Removed Hero Highlights (Unified into Card) */
+
 .hero-stats-container,
 .hero-highlights-row,
 .highlight-box {
@@ -629,11 +625,6 @@ h4 {
 }
 
 
-
-
-
-
-/* Technical Specs */
 .tech-specs {
     background-color: #111827;
     color: white;
@@ -697,7 +688,6 @@ h4 {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* Built to Last Section Redesign */
 .built-to-last {
     padding: 100px 0;
     background: #FFFFFF;
@@ -854,7 +844,6 @@ h4 {
 .accordion-item.active .accordion-icon {
     transform: rotate(180deg);
     background: #FDF2F8;
-    /* Light pink background from image */
     color: var(--primary);
 }
 
@@ -880,7 +869,7 @@ h4 {
     line-height: 1.6;
 }
 
-/* Catalogue Banner Redesign */
+
 .catalogue-banner {
     display: flex;
     justify-content: space-between;
@@ -942,11 +931,9 @@ h4 {
     display: none;
 }
 
-/* Applications Section Redesign */
 .applications-section {
     padding: 100px 0 0;
     background: #F9FAFB;
-    /* Premium light background from reference */
     width: 100%;
     overflow: hidden;
 }
@@ -978,7 +965,6 @@ h4 {
 
 .app-header .section-title {
     font-size: 2.5rem;
-    /* Exactly match the size in reference */
     margin-bottom: 20px;
     text-align: left;
     max-width: 600px;
@@ -990,7 +976,6 @@ h4 {
     text-align: left;
     margin: 0;
     max-width: 580px;
-    /* Force two/three lines like the image */
     line-height: 1.6;
 }
 
@@ -1031,7 +1016,6 @@ h4 {
     scrollbar-width: none;
     -ms-overflow-style: none;
     width: calc(100% + 160px);
-    /* Offset the container padding to touch edges */
     margin-left: -80px;
     padding-left: 80px;
     padding-right: 80px;
@@ -1610,13 +1594,13 @@ h4 {
     cursor: pointer;
 }
 
-/* CTA Section */
+
 .cta-section {
     padding: 80px 0;
 }
 
 .cta-box {
-    background: #2B3990; /* Dark Blue from reference */
+    background: #2B3990; 
     border-radius: 32px;
     padding: 80px 100px;
     color: white;
@@ -2494,7 +2478,7 @@ h4 {
         justify-content: center;
     }
 
-    /* Trust bar */
+   
     .logos-container {
         flex-wrap: nowrap;
         justify-content: flex-start;
@@ -2509,7 +2493,7 @@ h4 {
         max-width: 120px;
     }
 
-    /* Spec table */
+ 
     .table-container {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -2521,12 +2505,12 @@ h4 {
         font-size: 0.82rem;
     }
 
-    /* Features */
+   
     .feature-card {
         padding: 24px 20px;
     }
 
-    /* Catalogue */
+  
     .catalogue-banner {
         flex-direction: column;
         text-align: center;
@@ -2545,7 +2529,7 @@ h4 {
         width: 100%;
     }
 
-    /* CTA */
+
     .cta-box {
         padding: 36px 20px !important;
     }
@@ -2558,17 +2542,17 @@ h4 {
         padding: 24px 16px !important;
     }
 
-    /* App cards */
+  
     .app-grid {
         grid-template-columns: 1fr;
     }
 
-    /* Portfolio */
+
     .port-card {
         padding: 20px 16px;
     }
 
-    /* Process */
+
     .process-card {
         padding: 24px 16px !important;
         border-radius: 20px !important;
@@ -2578,7 +2562,7 @@ h4 {
         font-size: 1.25rem !important;
     }
 
-    /* Footer */
+
     .footer-grid {
         grid-template-columns: 1fr;
     }
