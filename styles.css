@@ -493,10 +493,31 @@ h4 {
 
 .logos-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    opacity: 0.6;
+    opacity: 0.8;
+    gap: 40px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 8px;
+}
+
+.logos-container::-webkit-scrollbar {
+    display: none;
+}
+
+.partner-logo {
+    width: 140px; /* Reduced width for better sliding action */
+    height: 50px;
+    max-width: 100%;
+    object-fit: contain;
     filter: grayscale(1);
+    opacity: 1;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    scroll-snap-align: start;
 }
 
 /* Removed Hero Highlights (Unified into Card) */
@@ -525,33 +546,7 @@ h4 {
 
 
 
-.logos-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0.8;
-}
 
-.btn img {
-    display: inline-block;
-    vertical-align: middle;
-    flex-shrink: 0;
-}
-
-.partner-logo {
-    width: 490px;
-    height: 102px;
-    max-width: 100%;
-    object-fit: contain;
-    filter: grayscale(1);
-    opacity: 1;
-    transition: all 0.3s ease;
-}
-
-.partner-logo:hover {
-    filter: grayscale(0);
-    opacity: 1;
-}
 
 /* Technical Specs */
 .tech-specs {
@@ -2072,14 +2067,20 @@ h4 {
     }
 
     .certifications-top,
-    .feature-list,
     .hero-actions,
     .thumbnails {
         justify-content: center;
     }
 
+    .feature-list {
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        padding: 0 16px;
+    }
+
     .feature-list li {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .pricing-card {
@@ -2113,16 +2114,45 @@ h4 {
 
     /* Grids */
     .features-grid,
-    .app-grid,
     .stats-grid,
     .port-grid,
     .footer-grid {
         grid-template-columns: 1fr;
     }
+    
+    .app-grid {
+        gap: 20px;
+        width: calc(100% + 48px);
+        margin-left: -24px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    
+    .app-card {
+        width: 80vw;
+        max-width: 320px;
+        height: 320px;
+    }
 
-    /* Testimonials */
+    /* Testimonials - horizontal scroll on mobile */
     .testimonials-track {
-        grid-template-columns: 1fr;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 16px; /* give some room for the scrollbar */
+        width: calc(100% + 48px);
+        margin-left: -24px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .testimonial-card {
+        flex-shrink: 0;
+        width: 75vw;
+        min-width: 260px;
+        max-width: 320px;
+        scroll-snap-align: start;
     }
 
     /* CTA */
@@ -2148,6 +2178,17 @@ h4 {
     .process-card {
         padding: 32px 20px;
         border-radius: 24px;
+    }
+
+    /* Applications Header */
+    .app-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .app-header .section-title {
+        font-size: 1.9rem;
     }
 
     .process-content-item {
@@ -2314,14 +2355,17 @@ h4 {
 
     /* Trust bar */
     .logos-container {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 24px;
+        width: calc(100% + 32px);
+        margin-left: -16px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .partner-logo {
-        max-width: calc(33% - 12px);
-        height: auto;
+        max-width: 120px;
     }
 
     /* Spec table */
