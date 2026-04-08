@@ -53,27 +53,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* --- Manufacturing Process Tabs Logic --- */
+    /* --- Manufacturing Process Logic --- */
     const tabs = document.querySelectorAll('.process-tab');
     const tabContents = document.querySelectorAll('.process-content-item');
+    const processNextBtn = document.querySelector('.process-nav-footer .next');
+    const processPrevBtn = document.querySelector('.process-nav-footer .prev');
+
+    function setActiveStep(targetId) {
+        tabs.forEach(t => {
+            t.classList.remove('active');
+            if (t.getAttribute('data-tab') === targetId) t.classList.add('active');
+        });
+
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+            if (content.id === targetId) content.classList.add('active');
+        });
+    }
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            const targetId = tab.getAttribute('data-tab');
-
-            // Update tab buttons
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-
-            // Update content items
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-                if (content.id === targetId) {
-                    content.classList.add('active');
-                }
-            });
+            setActiveStep(tab.getAttribute('data-tab'));
         });
     });
+
+    if (processNextBtn && processPrevBtn) {
+        processNextBtn.addEventListener('click', () => {
+            const currentActive = document.querySelector('.process-content-item.active');
+            const currentIndex = Array.from(tabContents).indexOf(currentActive);
+            const nextIndex = (currentIndex + 1) % tabContents.length;
+            setActiveStep(tabContents[nextIndex].id);
+        });
+
+        processPrevBtn.addEventListener('click', () => {
+            const currentActive = document.querySelector('.process-content-item.active');
+            const currentIndex = Array.from(tabContents).indexOf(currentActive);
+            const prevIndex = (currentIndex - 1 + tabContents.length) % tabContents.length;
+            setActiveStep(tabContents[prevIndex].id);
+        });
+    }
 
     /* --- Horizontal Scroll for Applications (Arrows) --- */
     const appGrid = document.querySelector('.app-grid');
