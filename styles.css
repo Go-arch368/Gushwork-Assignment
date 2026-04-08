@@ -122,6 +122,91 @@ h4 {
     border-color: var(--text-light);
 }
 
+/* Professional Sticky Header */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background: white;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.topbar.is-sticky {
+    transform: translateY(0);
+}
+
+.sticky-nav-row {
+    background: #F8F9FA;
+    border-bottom: 1px solid #EDEDED;
+    padding: 10px 0;
+}
+
+.sticky-product-row {
+    background: white;
+    padding: 12px 0;
+}
+
+.sticky-product-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sticky-product-info-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sticky-product-thumb {
+    width: 44px;
+    height: 44px;
+    background: #F3F4F6;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #E5E7EB;
+    flex-shrink: 0;
+}
+
+.sticky-product-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sticky-product-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sticky-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: -0.01em;
+}
+
+.sticky-price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #111827;
+}
+
+@media (max-width: 800px) {
+    .sticky-nav-row {
+        display: none; /* Hide top row on small screens to save space */
+    }
+    .sticky-product-text .sticky-title {
+        display: none; /* Only show price on tiny screens or hide entirely */
+    }
+}
+
 /* Navbar */
 .navbar {
     background-color: var(--bg-white);
@@ -2007,6 +2092,10 @@ h4 {
         gap: 16px;
     }
 
+    .sticky-nav-row .nav-links {
+        display: none; /* Simplify sticky header on small laptops */
+    }
+
     .cta-box {
         padding: 60px 40px;
     }
@@ -2064,6 +2153,40 @@ h4 {
     .hero-content {
         margin-top: 0;
         align-items: center;
+    }
+
+    .topbar {
+        width: 100%;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .sticky-nav-row {
+        display: none; /* Hide primary nav row on mobile sticky header */
+    }
+
+    .sticky-product-row {
+        padding: 10px 0;
+    }
+
+    .sticky-product-thumb {
+        display: none; /* Remove thumbnail to save space */
+    }
+
+    .sticky-title {
+        font-size: 0.85rem;
+        max-width: 180px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .sticky-price {
+        font-size: 0.95rem;
+    }
+
+    .sticky-product-actions .btn {
+        padding: 8px 16px !important;
+        font-size: 0.85rem !important;
     }
 
     .certifications-top,
@@ -2327,6 +2450,24 @@ h4 {
 
     .section-title {
         font-size: 1.6rem !important;
+    }
+
+    /* Sticky Header Tiny Mobile */
+    .sticky-product-text .sticky-title {
+        display: none; /* Only show price on tiny screens */
+    }
+
+    .sticky-product-info-group {
+        gap: 0;
+    }
+
+    .sticky-price {
+        font-size: 0.9rem !important;
+    }
+
+    .sticky-product-actions .btn {
+        padding: 6px 12px !important;
+        font-size: 0.75rem !important;
     }
 
     /* Hero */

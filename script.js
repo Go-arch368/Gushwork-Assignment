@@ -5,12 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.navbar');
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 150) {
-            topbar.style.display = 'block';
+        if (window.scrollY > 600) {
             topbar.classList.add('is-sticky');
             header.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
         } else {
-            topbar.style.display = 'none';
             topbar.classList.remove('is-sticky');
             header.style.boxShadow = 'none';
         }
