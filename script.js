@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* --- Sticky Header Logic --- */
     const topbar = document.getElementById('sticky-topbar');
     const header = document.querySelector('.navbar');
 
@@ -14,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    /* --- Image Zoom Logic --- */
+   
     const zoomContainer = document.getElementById('zoom-container');
     const zoomImage = document.getElementById('main-product-image');
 
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --- FAQ Accordion Logic --- */
     const accordionHeaders = document.querySelectorAll('.accordion-header');
 
     accordionHeaders.forEach(header => {
@@ -42,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const item = header.parentElement;
             const isActive = item.classList.contains('active');
 
-            // Close all other items
             document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
 
             if (!isActive) {
@@ -51,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* --- Manufacturing Process Logic --- */
     const tabs = document.querySelectorAll('.process-tab');
     const tabContents = document.querySelectorAll('.process-content-item');
     const processNextBtn = document.querySelector('.process-nav-footer .next');
@@ -91,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --- Horizontal Scroll for Applications (Arrows) --- */
+   
     const appGrid = document.querySelector('.app-grid');
     const nextBtn = document.querySelector('.arrow-btn[aria-label="Next"]');
     const prevBtn = document.querySelector('.arrow-btn[aria-label="Previous"]');
@@ -105,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --- Modal Logic --- */
     const catalogueModal = document.getElementById('catalogueModal');
     const quoteModal = document.getElementById('quoteModal');
     const btnDownloadDatasheet = document.getElementById('btnDownloadDatasheet');
@@ -141,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close on clicking outside the modal content
     if (catalogueModal) {
         catalogueModal.addEventListener('click', (e) => {
             if (e.target === catalogueModal) catalogueModal.classList.remove('active');
@@ -156,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-/* --- Global Thumbnail Switcher --- */
 window.changeImage = function(btn) {
     const mainImg = document.getElementById('main-product-image');
     const imageSrc = btn.getAttribute('data-image');
@@ -164,7 +157,6 @@ window.changeImage = function(btn) {
     if (mainImg && imageSrc) {
         mainImg.src = imageSrc;
         
-        // Update active class
         document.querySelectorAll('.thumb-wrapper').forEach(w => w.classList.remove('active'));
         btn.classList.add('active');
     }
