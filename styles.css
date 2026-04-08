@@ -2003,7 +2003,7 @@ h4 {
     }
 
     .hero-container {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         text-align: center;
         gap: 60px;
